@@ -1,0 +1,25 @@
+2 select DATE_format(orderdate,'%M'),sum(prodtbl.prodprice*orderDetail.orderQty)
+from orderdetail,ordertbl,prodtbl
+where ordertbl.orderno = orderdetail.orderno
+and prodtbl.prodno = orderdetail.prodno
+group by DATE_format(ordertbl.orderdate,'%M')
+
+3 select DATE_format(orderdate,'%M'),avg(prodtbl.prodprice*orderDetail.orderQty)
+from orderdetail,ordertbl,prodtbl
+where ordertbl.orderno = orderdetail.orderno
+and prodtbl.prodno = orderdetail.prodno
+group by DATE_format(ordertbl.orderdate,'%M')
+
+4 select DATE_format(orderdate,'%M'),max(prodtbl.prodName)
+from orderdetail,ordertbl,prodtbl
+where ordertbl.orderno = orderdetail.orderno
+and prodtbl.prodno = orderdetail.prodno
+group by DATE_format(ordertbl.orderdate,'%M')
+
+6 select DATE_format(orderdate,'%M'),max(prodtbl.prodprice*orderDetail.orderQty)
+from orderdetail,ordertbl,prodtbl
+where ordertbl.orderno = orderdetail.orderno
+and prodtbl.prodno = orderdetail.prodno
+group by DATE_format(ordertbl.orderdate,'%M')
+
+7 can't do
